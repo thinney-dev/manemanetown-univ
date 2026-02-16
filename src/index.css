@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  /* ▼▼▼ 修正：背景色を削除（透明に）しました ▼▼▼ */
+  background-color: transparent; 
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  /* ▼▼▼ 修正：ここも透明にして、奥の画像が見えるようにします ▼▼▼ */
+  background-color: transparent;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* ゴールドグラデーション（ここはそのまま維持） */
+.text-gold-gradient {
+  background: linear-gradient(
+    45deg,
+    #bf953f 0%,   /* 暗めの金 */
+    #fcf6ba 25%,  /* 明るい光 */
+    #b38728 50%,  /* 濃い金 */
+    #fbf5b7 75%,  /* 明るい光 */
+    #aa771c 100%  /* 締め色 */
+  );
+  
+  /* 文字の形に背景を切り抜く設定 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* 文字色を透明にする */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  /* グラデーションを綺麗に見せる設定 */
+  display: inline-block;
+  background-size: 200% auto;
+}
