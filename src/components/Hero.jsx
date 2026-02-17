@@ -42,7 +42,7 @@ const Hero = () => {
 
         {/* サブコピー */}
         <p className="text-silver/80 text-sm md:text-base font-sans tracking-widest">
-          自分らしく生きる人を増やす<br />実践型学生コミュニティ。
+          自分らしく生きる人を増やす<br />実践型学生コミュニティ
         </p>
 
       </div>

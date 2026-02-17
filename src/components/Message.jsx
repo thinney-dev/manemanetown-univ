@@ -30,8 +30,12 @@ const Message = () => {
                 OUR MESSAGE
               </span>
               
-              {/* ▼▼▼ 修正：w-max を w-[120%] md:w-max に変更し、汽車全体を覆うように右へ拡張 ▼▼▼ */}
-              <h2 className="text-3xl md:text-4xl font-serif text-white leading-tight drop-shadow-xl bg-navy-600/10 backdrop-blur-sm p-4 md:p-2 rounded-xl w-[120%] md:w-max -ml-2 md:ml-0">
+              {/* ▼▼▼ 修正：元のデザインを採用し、スマホバグ対策(transform-gpu等)を追加 ▼▼▼ */}
+              {/* ※ bg-navy-00/10 を bg-navy-900/20 に修正し、より安定したすりガラスにしています */}
+              <h2 
+                className="text-3xl md:text-4xl font-serif text-white leading-tight drop-shadow-xl bg-navy-650/20 backdrop-blur-sm p-4 md:p-2 rounded-xl w-[120%] md:w-max -ml-2 md:ml-0 transform-gpu overflow-hidden"
+                style={{ WebkitBackdropFilter: 'blur(4px)' }}
+              >
                 AIに仕事が<br />
                 奪われる時代。<br />
                 あなたは<br />
@@ -41,16 +45,17 @@ const Message = () => {
 
             {/* スマホ版のみ表示：見出しの右側に汽車を配置 */}
             <div className="flex md:hidden absolute right-[-5vw] bottom-0 w-[60%] sm:w-[45%] pointer-events-none -z-10 items-end">
+              {/* 汽車の画像にも transform-gpu を追加して描画を安定化 */}
               <img 
                 src={trainImg} 
                 alt="Steam Train" 
-                className="w-full object-contain grayscale brightness-125 drop-shadow-2xl"
+                className="w-full object-contain grayscale brightness-125 drop-shadow-2xl transform-gpu"
               />
             </div>
 
           </div>
 
-          {/* ▼▼▼ 右側：本文（w-fullを追加し、スマホで中央に正しく配置させる） ▼▼▼ */}
+          {/* 右側：本文 */}
           <div className="w-full md:w-2/3 space-y-8 animate-fade-in delay-100">
             <div className="text-silver/90 leading-loose text-base font-sans space-y-6 text-justify bg-navy-900/60 p-8 rounded-lg backdrop-blur-md shadow-2xl">
               <p>
