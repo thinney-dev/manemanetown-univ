@@ -46,7 +46,7 @@ const Activity_1 = () => {
               「まねまねタウン」
             </h2>
             <p className="text-lg text-silver/80 font-serif border-l-4 border-gold-400 pl-4">
-              社会貢献と「最高の実践」がここにある。
+              社会貢献と<span className="text-gold-gradient">最高の実践</span>がここにある。
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const Activity_1 = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-serif text-white">子供たちに社会の仕組みを届ける</h3>
               <p className="text-silver/80 leading-loose text-justify text-sm md:text-base">
-                「まねまねタウン」とは、THINNEYが創業当初から手がけている子供たちに金融や社会の仕組みを教える教育プログラムです。
+                「まねまねタウン」とは、子供たちに金融や社会の仕組みを教える教育プログラムです。
                 コミュニティ内で金融に関する知識を習得し、選ばれた学生には実際の授業をしていただきます。
               </p>
             </div>
@@ -84,7 +84,7 @@ const Activity_1 = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-serif text-white">なぜやるのか？</h3>
               <p className="text-silver/80 leading-loose text-justify text-sm md:text-base">
-                複雑な社会の仕組みを子供に教えるプロセスは、社会人に不可欠な「論理的思考力」と、相手の視座に立つ「高度なコミュニケーション能力」を養う最高のトレーニングです。
+                複雑な社会の仕組みを子供に教えるプロセスは、社会人に不可欠な<span className="text-white border-b border-gold-400/50">論理的思考力</span>と、相手の視座に立つ高度な<span className="text-white border-b border-gold-400/50">コミュニケーション能力</span>を養う最高のトレーニングです。
               </p>
             </div>
           </div>
@@ -139,7 +139,6 @@ const Activity_1 = () => {
                     
                     <div className="text-silver/80 text-sm md:text-base leading-loose text-justify space-y-4">
                       
-                      {/* ▼▼▼ 修正：スマホ表示制御エリア ▼▼▼ */}
                       <p>
                         「お金にお金を生み出させる」一体、何割の大学生がこの発想に出会えるだろう。
                         {/* PC(md)では常にinline表示、スマホでは展開時のみ表示 */}
@@ -161,17 +160,24 @@ const Activity_1 = () => {
                         </p>
                       </div>
 
-                      {/* ▼▼▼ 追加：スマホ版のみ表示される「続きを読む」ボタン ▼▼▼ */}
-                      {!isExpanded && (
-                        <div className="md:hidden text-center pt-2">
+                      {/* ▼▼▼ 修正：スマホ版のみ表示される「続きを読む / 折りたたむ」ボタン ▼▼▼ */}
+                      <div className="md:hidden text-center pt-2 mt-4">
+                        {!isExpanded ? (
                           <button 
                             onClick={() => setIsExpanded(true)}
                             className="text-gold-400 font-bold text-sm tracking-widest border-b border-gold-400/50 pb-1"
                           >
                             続きを読む...
                           </button>
-                        </div>
-                      )}
+                        ) : (
+                          <button 
+                            onClick={() => setIsExpanded(false)}
+                            className="text-gold-400 font-bold text-sm tracking-widest border-b border-gold-400/50 pb-1"
+                          >
+                            折りたたむ
+                          </button>
+                        )}
+                      </div>
 
                     </div>
 

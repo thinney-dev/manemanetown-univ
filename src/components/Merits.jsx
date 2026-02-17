@@ -73,7 +73,7 @@ const Merits = () => {
             
             <div className="flex-1 space-y-4 text-silver/80 text-sm leading-loose text-justify">
               <p>
-                ラーニングピラミッドにおいて、講義を受けるだけの定着率はわずか5%。対して「他人に教える」経験の定着率は<span className="text-white font-bold text-lg mx-1">90%</span>と言われます。
+                ラーニングピラミッドにおいて、講義を受けるだけの定着率はわずか5%。対して他人に教える経験の定着率は<span className="text-white font-bold text-lg mx-1">90%</span>と言われます。
               </p>
               <p>
                 子供たちに噛み砕いて教えるという<span className="text-white border-b border-gold-400/50">究極のアウトプット</span>を繰り返すことで、生半可な勉強では到達できないレベルの実力が定着します。
@@ -101,7 +101,7 @@ const Merits = () => {
                 金融教育を提供する側になることで、NISAや投資信託など<span className="text-white border-b border-gold-400/50">自分の将来の資産形成</span>に直結する知識が、嫌でも身につきます。
               </p>
               <p>
-                さらに、大企業に就職する以外の「稼ぐ力」やビジネスモデルへの理解が深まり、将来のキャリアにおける<span className="text-white border-b border-gold-400/50">期待年収の底上げ</span>が可能です。
+                さらに、大企業に就職する以外の<span className="text-white border-b border-gold-400/50">稼ぐ力</span>やビジネスモデルへの理解が深まり、将来のキャリアにおける<span className="text-white border-b border-gold-400/50">期待年収の底上げ</span>が可能です。
               </p>
             </div>
           </div>

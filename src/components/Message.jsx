@@ -21,21 +21,16 @@ const Message = () => {
         
         <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
           
-          {/* 左側：キャッチコピー ＆ スマホ版汽車 */}
+          {/* 左側：キャッチコピー */}
           <div className="md:w-1/3 animate-fade-in relative w-full">
             
-            {/* テキスト部分 */}
             <div className="space-y-6 relative z-10">
               <span className="text-gold-gradient font-sans font-bold tracking-widest text-xs border-b border-gold-400 pb-2 inline-block">
                 OUR MESSAGE
               </span>
               
-              {/* ▼▼▼ 修正：元のデザインを採用し、スマホバグ対策(transform-gpu等)を追加 ▼▼▼ */}
-              {/* ※ bg-navy-00/10 を bg-navy-900/20 に修正し、より安定したすりガラスにしています */}
-              <h2 
-                className="text-3xl md:text-4xl font-serif text-white leading-tight drop-shadow-xl bg-navy-650/20 backdrop-blur-sm p-4 md:p-2 rounded-xl w-[120%] md:w-max -ml-2 md:ml-0 transform-gpu overflow-hidden"
-                style={{ WebkitBackdropFilter: 'blur(4px)' }}
-              >
+              {/* ▼▼▼ 修正：スマホではすりガラスと背景色を無効化し、PCのみ適用する ▼▼▼ */}
+              <h2 className="text-3xl md:text-4xl font-serif text-white leading-tight drop-shadow-xl md:bg-navy-900/20 md:backdrop-blur-sm p-4 md:p-2 rounded-xl w-full md:w-max -ml-4 md:ml-0 md:transform-gpu md:overflow-hidden">
                 AIに仕事が<br />
                 奪われる時代。<br />
                 あなたは<br />
@@ -43,15 +38,15 @@ const Message = () => {
               </h2>
             </div>
 
-            {/* スマホ版のみ表示：見出しの右側に汽車を配置 */}
-            <div className="flex md:hidden absolute right-[-5vw] bottom-0 w-[60%] sm:w-[45%] pointer-events-none -z-10 items-end">
-              {/* 汽車の画像にも transform-gpu を追加して描画を安定化 */}
+            {/* ▼▼▼ 修正：スマホ版の汽車を完全に削除（コメントアウト）しました ▼▼▼ */}
+            {/* <div className="flex md:hidden absolute right-[-5vw] bottom-0 w-[60%] sm:w-[45%] pointer-events-none -z-10 items-end">
               <img 
                 src={trainImg} 
                 alt="Steam Train" 
                 className="w-full object-contain grayscale brightness-125 drop-shadow-2xl transform-gpu"
               />
             </div>
+            */}
 
           </div>
 

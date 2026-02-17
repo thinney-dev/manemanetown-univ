@@ -6,8 +6,9 @@ const Activity_2 = () => {
       <div className="max-w-6xl mx-auto">
         
         {/* === ヘッダーエリア === */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 animate-fade-in">
-          <div className="space-y-6">
+        {/* ▼▼▼ 修正：スマホ表示の際に左端がカードと揃うように、全体の並びとパディングを調整 ▼▼▼ */}
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-8 animate-fade-in items-start text-left">
+          <div className="space-y-6 w-full md:w-auto">
             <span className="text-gold-gradient font-sans font-bold tracking-widest text-xs border border-gold-400 px-3 py-1 inline-block">
               ACTIVITY 02
             </span>
@@ -16,14 +17,13 @@ const Activity_2 = () => {
               独自の成長システム
             </h2>
           </div>
-          <div className="md:text-right text-silver/80 text-sm md:text-base leading-loose font-sans">
+          <div className="md:text-right text-silver/80 text-sm md:text-base leading-loose font-sans w-full md:w-auto">
             <p>インプットだけで終わらせない。</p>
             <p>実社会で通用する 再現性 のあるスキルを習得する。</p>
           </div>
         </div>
 
         {/* === メインコンテンツ（3カラム横並び） === */}
-        {/* PC表示では3列 (md:grid-cols-3)、スマホ表示では縦並び */}
         <div className="relative grid md:grid-cols-3 gap-6 md:gap-8">
           
           {/* Step 01: Input */}
@@ -49,8 +49,6 @@ const Activity_2 = () => {
               </div>
             </div>
           </div>
-
-          
 
           {/* Step 02: Output */}
           <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-gold-400/40 transition duration-500">
@@ -82,7 +80,6 @@ const Activity_2 = () => {
           </div>
 
           {/* Support System: 土台となる環境 */}
-          {/* 他の2つと少しデザインを変えて、ベース（基盤）であることを強調 */}
           <div className="bg-navy-900/40 border border-white/5 p-8 rounded-xl relative overflow-hidden group hover:border-gold-400/20 transition duration-500 backdrop-blur-sm">
             <div className="relative z-10 flex flex-col h-full">
               <span className="text-silver/60 font-sans font-bold text-xs tracking-widest block mb-2 border border-silver/20 px-2 py-1 inline-block w-max rounded">

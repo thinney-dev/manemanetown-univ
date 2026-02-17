@@ -14,7 +14,7 @@ const Problem = () => {
           </h2>
           <p className="text-silver/60 text-sm leading-loose font-sans">
             多くの学生が感じる違和感。<br />
-            それは、あなたが「本気」である証拠かもしれない。
+            それは、あなたが本気である証拠かもしれない。
           </p>
         </div>
 
