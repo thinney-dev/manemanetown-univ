@@ -72,7 +72,7 @@ const Organization = () => {
                     自分らしく生きる人を増やす
                   </h3>
                   <p className="text-xs md:text-sm text-silver/60 tracking-widest font-serif">
-                    織戸 弘暉
+                    織戸 弘暉　Koki Orito
                   </p>
                 </div>
 
