@@ -52,13 +52,13 @@ const Message = () => {
           <div className="w-full md:w-2/3 space-y-8 animate-fade-in delay-100">
             <div className="text-silver/90 leading-loose text-base font-sans space-y-6 text-justify bg-navy-900/60 p-8 rounded-lg backdrop-blur-md shadow-2xl">
               <p>
-                「AIに仕事が奪われる」なんてニュースを、あなたはどんな気持ちで見ているだろうか。
+                「AIに仕事が奪われる」なんてニュースをあなたはどんな気持ちで見ているだろうか。
               </p>
               <p>
                 産業革命によって文明が急速に発展した19世紀。ハーバーボッシュ法により食糧生産に革命が起きた20世紀。そして、AIが急速に社会に浸透しつつある今。
               </p>
               <p>
-                我々は、過去の革命に次ぐ「変化の時代」の真っ只中にいる。
+                我々は過去の革命に次ぐ「変化の時代」の真っ只中にいる。
                 10年先の未来さえ想像できないこの世界で、社会に出る前の私たち学生は何を武器にすればいいのか。
               </p>
               <p>
