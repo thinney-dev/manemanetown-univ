@@ -46,7 +46,7 @@ const Activity_1 = () => {
             </span>
             <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight">
               新しい金融教育<br />
-              「まねまねタウン」
+              <span className="text-gold-gradient">まねまねタウン</span>
             </h2>
             <p className="text-lg text-silver/80 font-serif border-l-4 border-gold-400 pl-4">
               社会貢献と<span className="text-gold-gradient">最高の実践</span>がここにある。
