@@ -31,10 +31,8 @@ const Message = () => {
               
               {/* ▼▼▼ 修正：スマホではすりガラスと背景色を無効化し、PCのみ適用する ▼▼▼ */}
               <h2 className="text-3xl md:text-4xl font-serif text-white leading-tight drop-shadow-xl md:bg-navy-900/20 md:backdrop-blur-sm p-4 md:p-2 rounded-xl w-full md:w-max -ml-4 md:ml-0 md:transform-gpu md:overflow-hidden">
-                AIに仕事が<br />
-                奪われる時代。<br />
-                あなたは<br />
-                どう生きますか？
+                AI共生時代。<br />
+                あなたは<br />どう生きますか？
               </h2>
             </div>
 

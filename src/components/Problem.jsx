@@ -13,7 +13,7 @@ const Problem = () => {
             抱えていませんか？
           </h2>
           <p className="text-silver/60 text-sm leading-loose font-sans">
-            多くの学生が感じる違和感。<br />
+            多くの学生が感じる違和感<br />
             それは、あなたが本気である証拠かもしれない。
           </p>
         </div>
@@ -21,10 +21,10 @@ const Problem = () => {
         {/* 右側：悩みリスト */}
         <div className="space-y-8">
           {[
-            "想像していた大学生像はもっと視座の高いものだったのに、日々の生活に物足りなさを感じている。",
-            "様々な業務がAIに置き換わりつつある中で、漠然とした未来への不安がある。",
+            "想像していた大学生像はもっと視座の高いものだった。日々の生活に物足りなさを感じている。",
+            "様々な業務がAIに置き換わりつつある中、漠然とした未来への不安がある。",
             "就活に向けて企業とのコネクションを作っておきたい。",
-            "周りと話が合わない。もっと本気で意見をぶつけられる仲間が欲しい。"
+            "本気で意見を語り合える仲間が欲しい。"
           ].map((text, index) => (
             <div key={index} className="flex gap-6 border-b border-white/10 pb-6 group hover:border-gold-400/50 transition duration-300">
               <span className="text-gold-gradient font-serif text-xl md:text-2xl opacity-80 group-hover:scale-110 transition duration-300">

@@ -1,30 +1,57 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 // ロゴ画像の読み込み
 import companyLogos from '../assets/company-logos.png';
 
 const Merits = () => {
+  // 現在のアクティブなスライド番号（0, 1, 2）を管理
+  const [activeSlide, setActiveSlide] = useState(0);
+  const scrollContainerRef = useRef(null);
+
+  // スクロール位置を監視して、アクティブなスライドを更新する関数
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const width = scrollContainerRef.current.offsetWidth;
+      // スクロール位置から、現在表示されているスライドのインデックスを計算
+      const index = Math.round(scrollLeft / width);
+      setActiveSlide(index);
+    }
+  };
+
   return (
-    <section className="py-32 px-6 relative border-t border-white/10">
+    <section className="py-32 px-6 relative border-t border-white/10 overflow-hidden">
+      
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+
       <div className="max-w-6xl mx-auto">
         
         {/* セクションタイトル */}
-        {/* ▼▼▼ 修正：text-center md:text-left を削除し、text-left に統一しました ▼▼▼ */}
-        <div className="mb-20 animate-fade-in text-left">
+        <div className="mb-12 md:mb-20 animate-fade-in text-left">
           <h2 className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">
             学生が得られる<span className="text-gold-gradient ml-4">3つの実利</span>
           </h2>
           <p className="text-silver/60 text-sm md:text-base font-sans tracking-wider">
-            綺麗事抜き。<br />将来のあなたを助ける武器がここにある。
+            綺麗事抜き<br />将来のあなたを助ける武器がここにある。
           </p>
         </div>
 
-        {/* 3つのメリットカード */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* スクロールコンテナ */}
+        <div 
+          ref={scrollContainerRef}
+          onScroll={handleScroll}
+          className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0"
+        >
           
-          {/* ============================================================
-              Merit 01: 一流企業への「直結ルート」
-             ============================================================ */}
-          <div className="bg-white/5 border border-white/10 p-8 hover:border-gold-400/50 transition duration-500 group relative overflow-hidden flex flex-col">
+          {/* Merit 01 */}
+          <div className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white/5 border border-white/10 p-8 hover:border-gold-400/50 transition duration-500 group relative overflow-hidden flex flex-col rounded-xl">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold-400/20 transition duration-500"></div>
             
             <div className="text-6xl font-serif text-gold-gradient opacity-90 mb-6 group-hover:scale-110 transition duration-500 origin-left">
@@ -41,7 +68,6 @@ const Merits = () => {
               </p>
             </div>
 
-            {/* ロゴ表示エリア */}
             <div className="mt-auto pt-6 border-t border-white/10">
               <p className="text-xs text-gold-gradient font-bold tracking-widest mb-3">
                 SPECIAL CONNECTIONS
@@ -57,10 +83,8 @@ const Merits = () => {
           </div>
 
 
-          {/* ============================================================
-              Merit 02: 最強の学習法「教える」経験
-             ============================================================ */}
-          <div className="bg-white/5 border border-white/10 p-8 hover:border-gold-400/50 transition duration-500 group relative overflow-hidden flex flex-col">
+          {/* Merit 02 */}
+          <div className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white/5 border border-white/10 p-8 hover:border-gold-400/50 transition duration-500 group relative overflow-hidden flex flex-col rounded-xl">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold-400/20 transition duration-500"></div>
             
             <div className="text-6xl font-serif text-gold-gradient opacity-90 mb-6 group-hover:scale-110 transition duration-500 origin-left">
@@ -82,10 +106,8 @@ const Merits = () => {
           </div>
 
 
-          {/* ============================================================
-              Merit 03: 将来の「資産」と「年収」を最大化する
-             ============================================================ */}
-          <div className="bg-white/5 border border-white/10 p-8 hover:border-gold-400/50 transition duration-500 group relative overflow-hidden flex flex-col">
+          {/* Merit 03 */}
+          <div className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white/5 border border-white/10 p-8 hover:border-gold-400/50 transition duration-500 group relative overflow-hidden flex flex-col rounded-xl">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold-400/20 transition duration-500"></div>
             
             <div className="text-6xl font-serif text-gold-gradient opacity-90 mb-6 group-hover:scale-110 transition duration-500 origin-left">
@@ -107,6 +129,19 @@ const Merits = () => {
           </div>
 
         </div>
+
+        {/* ▼▼▼ 追加：スマホ版のみ表示されるドットインジケーター ▼▼▼ */}
+        <div className="flex md:hidden justify-center gap-3 mt-6">
+          {[0, 1, 2].map((index) => (
+            <div 
+              key={index}
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                activeSlide === index ? 'bg-gold-400' : 'bg-white/20'
+              }`}
+            ></div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

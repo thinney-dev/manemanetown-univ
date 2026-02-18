@@ -15,7 +15,7 @@ const Closing = () => {
           </h2>
           
           <p className="text-silver/90 text-sm md:text-lg font-sans tracking-wide drop-shadow-md">
-            あなたの 個 が輝く場所が、ここにあります。
+            あなたの<span className="text-gold-gradient">個</span>が輝く場所が、ここにあります。
           </p>
         </div>
 

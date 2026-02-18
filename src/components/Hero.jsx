@@ -68,7 +68,6 @@ const Hero = () => {
       </div>
 
       {/* 企業ロゴのエリア */}
-      {/* ▼▼▼ 修正: bg-white を md:bg-white に変更し、スマホでは背景が透明になるようにしました ▼▼▼ */}
       <div className="absolute bottom-0 md:bottom-24 left-0 w-full md:bg-white py-4 z-20 overflow-hidden">
         
         {/* PC版のみ表示：横スクロール */}
@@ -94,11 +93,12 @@ const Hero = () => {
         </div>
 
         {/* スマホ版のみ表示：静止画像1枚を中央配置 */}
-        <div className="flex md:hidden justify-center items-center px-4 w-full py-2">
+        {/* ▼▼▼ 修正: px-4 を外し、w-[92%] max-w-[360px] にして上の文字幅と揃えました ▼▼▼ */}
+        <div className="flex md:hidden justify-center items-center w-full py-2">
           <img 
             src={logo2} 
             alt="Partner Logos Mobile" 
-            className="w-[85%] max-w-[320px] h-auto object-contain" 
+            className="w-[92%] max-w-[360px] h-auto object-contain" 
           />
         </div>
 
