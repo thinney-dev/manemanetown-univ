@@ -1,4 +1,3 @@
-// ▼▼▼ 修正：useState を追加でインポート ▼▼▼
 import React, { useState } from 'react';
 
 // 画像の読み込み（png形式）
@@ -12,10 +11,13 @@ import img6 from '../assets/IMG_6.png';
 // アイコン画像
 import userIcon from '../assets/SF.png'; 
 
+// 教授の顔写真
+import moriImg from '../assets/mori.png'; 
+import kitaguchiImg from '../assets/kitaguchi.png';
+
 const Activity_1 = () => {
   const images = [img1, img2, img3, img4, img5, img6];
   
-  // ▼▼▼ 追加：「続きを読む」の状態を管理するステート ▼▼▼
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -36,7 +38,8 @@ const Activity_1 = () => {
       <div className="max-w-6xl mx-auto">
         
         {/* === 上部エリア（タイトル・スライダー） === */}
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-20">
+        {/* ▼▼▼ 修正1：スマホ版のみ mb-20 を mb-10 に減らして余白を短縮 ▼▼▼ */}
+        <div className="flex flex-col md:flex-row gap-12 items-center mb-10 md:mb-20">
           <div className="md:w-5/12 space-y-6">
             <span className="text-gold-gradient font-sans font-bold tracking-widest text-xs border border-gold-400 px-3 py-1 inline-block">
               ACTIVITY 01
@@ -69,8 +72,9 @@ const Activity_1 = () => {
         </div>
 
 
-        {/* === 中段エリア（説明・特典） === */}
-        <div className="grid md:grid-cols-12 gap-12 md:gap-20 pt-12 pb-20">
+        {/* === 中段エリア（説明・監修・特典） === */}
+        {/* ▼▼▼ 修正2：スマホ版のみ pt-12 を pt-6 に減らして余白を短縮 ▼▼▼ */}
+        <div className="grid md:grid-cols-12 gap-12 md:gap-20 pt-6 md:pt-12 pb-20">
           
           <div className="md:col-span-7 space-y-10">
             <div className="space-y-4">
@@ -87,6 +91,47 @@ const Activity_1 = () => {
                 複雑な社会の仕組みを子供に教えるプロセスは、社会人に不可欠な<span className="text-white border-b border-gold-400/50">論理的思考力</span>と、相手の視座に立つ高度な<span className="text-white border-b border-gold-400/50">コミュニケーション能力</span>を養う最高のトレーニングです。
               </p>
             </div>
+
+            {/* 監修者セクション */}
+            <div className="pt-8 border-t border-white/10">
+              {/* ▼▼▼ 修正3：スマホ版のみ text-center を適用して中央揃えに ▼▼▼ */}
+              <span className="text-gold-gradient font-sans font-bold tracking-widest text-xs mb-6 block text-center md:text-left">
+                教材監修者
+              </span>
+              
+              <div className="grid gap-6">
+                {/* 森先生 */}
+                <div className="flex items-center gap-5 bg-white/5 p-4 rounded-lg border border-white/10 backdrop-blur-sm">
+                  <div className="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden border-2 border-gold-400/30">
+                    <img src={moriImg} alt="森 利博氏" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-silver/60 tracking-wider mb-1 font-sans">
+                      ゴールドマンサックス出身<br />立命館大学大学院 前教授
+                    </p>
+                    <p className="text-white font-serif text-lg leading-tight">
+                      森 利博 <span className="text-xs text-silver/40">氏</span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* 北口先生 */}
+                <div className="flex items-center gap-5 bg-white/5 p-4 rounded-lg border border-white/10 backdrop-blur-sm">
+                  <div className="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden border-2 border-gold-400/30">
+                    <img src={kitaguchiImg} alt="北口 勝也教授" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-silver/60 tracking-wider mb-1 font-sans">
+                      武庫川女子大学 教育学部長
+                    </p>
+                    <p className="text-white font-serif text-lg leading-tight">
+                      北口 勝也 <span className="text-xs text-silver/40">教授</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div className="md:col-span-5">
@@ -111,17 +156,15 @@ const Activity_1 = () => {
         </div>
 
 
-        {/* ▼▼▼ MEMBER'S VOICE ▼▼▼ */}
+        {/* MEMBER'S VOICE */}
         <div className="pt-20">
             <div className="text-center mb-10">
                 <span className="text-gold-gradient font-serif italic text-2xl">MEMBER'S VOICE</span>
             </div>
 
             <div className="bg-navy-900/40 border border-white/10 p-8 md:p-12 rounded-xl backdrop-blur-sm relative overflow-hidden flex flex-col md:flex-row gap-8 items-start">
-                {/* 装飾 */}
                 <div className="absolute -left-10 -top-10 w-40 h-40 bg-gold-400/5 rounded-full blur-3xl"></div>
 
-                {/* アイコン画像（丸） */}
                 <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 relative mx-auto md:mx-0">
                     <div className="absolute inset-0 rounded-full border border-gold-400/30 animate-pulse"></div>
                     <img 
@@ -131,36 +174,30 @@ const Activity_1 = () => {
                     />
                 </div>
 
-                {/* テキスト部分 */}
                 <div className="space-y-6 text-center md:text-left flex-1">
                     <p className="text-gold-gradient font-bold text-lg md:text-xl font-serif">
                         「見えるようになった景色」
                     </p>
                     
                     <div className="text-silver/80 text-sm md:text-base leading-loose text-justify space-y-4">
-                      
                       <p>
                         「お金にお金を生み出させる」一体、何割の大学生がこの発想に出会えるだろう。
-                        {/* PC(md)では常にinline表示、スマホでは展開時のみ表示 */}
                         <span className={`transition-all duration-500 ${isExpanded ? 'inline opacity-100' : 'hidden md:inline'}`}>
                           <br />私はまねまねタウンで２年に渡り教材開発の責任者を務めました。
                         </span>
                       </p>
 
-                      {/* PC(md)では常にblock表示、スマホでは展開時のみ表示 */}
                       <div className={`space-y-4 transition-all duration-500 ${isExpanded ? 'block opacity-100' : 'hidden md:block'}`}>
                         <p>
                           事前学習、教材開発、教室でのアウトプット。このサイクルを回していると驚くべき光景を目の当たりにすることがあります。
-                          前回まで「お小遣い」の概念しか持っていなかった子どもたちが、投資や金利の仕組みを理解し、目の色を変えてコンテンツを楽しみ始めたり、学んだ知識を家に持ち帰って親御さんに熱心に教えたりすることです。自分の作成した教材がきっかけとなり、子どもたちの行動そのものが変わっていくのです。
+                          前回まで「お小遣い」の概念しか持っていなかった子どもたちが、投資や金利の仕組みを理解し、目の色を変えてコンテンツを楽しみ始めたり、学んだ知識を家に持ち帰って親御さんに熱心に教えたりすることです。自分の作成した教材をきっかけに、子どもたちの行動そのものが変わっていくのです。
                         </p>
-
                         <p>
                           日々の経済ニュース、企業の広告、毎日の資産推移といった情報に関心を抱くようになり、私自身も大きく成長できました。<br />
-                          私が作った教材を通じ自分と子どもたちの世界が広がる。その様子を実感するたびにまねまねタウンに出会えてよかったと感じます。「お金について学ぶことは、未来の選択肢を広げることだ」。そう確信を持って言えるようになったことこそが、この2年間の活動で得た最大の財産です。
+                          私が作った教材を通じ自分と子どもたちの世界が広がる。その様子を実感するたびにまねまねタウンに出会えてよかったと感じます。「お金について学ぶことは未来の選択肢を広げることだ」。そう確信を持って言えるようになったことこそがこの2年間の活動で得た最大の財産です。
                         </p>
                       </div>
 
-                      {/* ▼▼▼ 修正：スマホ版のみ表示される「続きを読む / 折りたたむ」ボタン ▼▼▼ */}
                       <div className="md:hidden text-center pt-2 mt-4">
                         {!isExpanded ? (
                           <button 
@@ -178,7 +215,6 @@ const Activity_1 = () => {
                           </button>
                         )}
                       </div>
-
                     </div>
 
                     <div className="pt-2 border-t border-white/10 inline-block w-full">
