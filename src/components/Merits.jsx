@@ -19,8 +19,12 @@ const Merits = () => {
   };
 
   return (
-    <section className="py-32 px-6 relative border-t border-white/10 overflow-hidden">
+    // ▼▼▼ 修正1： border-t border-white/10 を削除して上の線を消しました ▼▼▼
+    <section className="py-10 px-6 relative overflow-hidden">
       
+      {/* ▼▼▼ 修正2：上から下へ広がるうっすらとした白いフィルターを追加 ▼▼▼ */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none -z-10"></div>
+
       <style>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
@@ -31,7 +35,8 @@ const Merits = () => {
         }
       `}</style>
 
-      <div className="max-w-6xl mx-auto">
+      {/* ▼▼▼ 追加：コンテンツがフィルターの上にしっかり表示されるように relative z-10 を追加 ▼▼▼ */}
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* セクションタイトル */}
         <div className="mb-12 md:mb-20 animate-fade-in text-left">
@@ -130,7 +135,7 @@ const Merits = () => {
 
         </div>
 
-        {/* ▼▼▼ 追加：スマホ版のみ表示されるドットインジケーター ▼▼▼ */}
+        {/* スマホ版のみ表示されるドットインジケーター */}
         <div className="flex md:hidden justify-center gap-3 mt-6">
           {[0, 1, 2].map((index) => (
             <div 

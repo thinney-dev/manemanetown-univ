@@ -17,7 +17,7 @@ const Activity_2 = () => {
   };
 
   return (
-    <section className="py-32 px-6 relative border-t border-white/10">
+    <section className="py-10 px-6 relative border-t border-white/10">
       
       {/* スクロールバー非表示用のスタイル */}
       <style>{`

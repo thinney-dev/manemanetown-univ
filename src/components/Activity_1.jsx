@@ -21,7 +21,7 @@ const Activity_1 = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="py-32 px-6 border-t border-white/10 overflow-hidden">
+    <section className="py-10 px-6 border-t border-white/10 overflow-hidden">
       
       <style>{`
         @keyframes infinite-scroll {

@@ -3,8 +3,13 @@ import trainImg from '../assets/train.png';
 
 const Message = () => {
   return (
-    <section className="py-32 px-6 relative overflow-hidden min-h-[80vh] flex items-center">
+    // ▼▼▼ 修正1: border-t border-white/10 を追加し、物理的な境界線を薄く引きました ▼▼▼
+    <section className="pt-16 pb-24 md:py-32 px-6 relative overflow-hidden min-h-[80vh] flex items-center border-t border-white/10">
       
+      {/* ▼▼▼ 追加: 背景のhero-bg.jpgの上にかかる「白いフィルター（グラデーション）」 ▼▼▼ */}
+      {/* 完全に白くせず、上部10%の白からフワッと透明になることで、文字の読みやすさとセクションの変化を両立します */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none -z-30"></div>
+
       {/* PC版のみ表示：背景の巨大な汽車 */}
       <div className="hidden md:flex absolute top-0 left-0 w-full h-full -z-20 items-center justify-center pointer-events-none overflow-hidden">
         <div className="w-full max-w-md transform scale-150 translate-y-[20vh] -translate-x-[30vw]">
@@ -19,7 +24,8 @@ const Message = () => {
       {/* テキストコンテンツ */}
       <div className="max-w-5xl mx-auto relative z-10 w-full">
         
-        <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
+        {/* スマホ版のみタイトルと本文の隙間を半分に(gap-6) */}
+        <div className="flex flex-col md:flex-row gap-6 md:gap-20 items-start">
           
           {/* 左側：キャッチコピー */}
           <div className="md:w-1/3 animate-fade-in relative w-full">
@@ -29,22 +35,11 @@ const Message = () => {
                 OUR MESSAGE
               </span>
               
-              {/* ▼▼▼ 修正：スマホではすりガラスと背景色を無効化し、PCのみ適用する ▼▼▼ */}
               <h2 className="text-3xl md:text-4xl font-serif text-white leading-tight drop-shadow-xl md:bg-navy-900/20 md:backdrop-blur-sm p-4 md:p-2 rounded-xl w-full md:w-max -ml-4 md:ml-0 md:transform-gpu md:overflow-hidden">
                 AI共生時代。<br />
                 あなたは<br />どう生きますか？
               </h2>
             </div>
-
-            {/* ▼▼▼ 修正：スマホ版の汽車を完全に削除（コメントアウト）しました ▼▼▼ */}
-            {/* <div className="flex md:hidden absolute right-[-5vw] bottom-0 w-[60%] sm:w-[45%] pointer-events-none -z-10 items-end">
-              <img 
-                src={trainImg} 
-                alt="Steam Train" 
-                className="w-full object-contain grayscale brightness-125 drop-shadow-2xl transform-gpu"
-              />
-            </div>
-            */}
 
           </div>
 

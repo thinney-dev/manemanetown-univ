@@ -24,7 +24,8 @@ const Hero = () => {
       `}</style>
 
       {/* メインコンテンツ */}
-      <div className="relative z-10 text-center px-2 md:px-6 animate-fade-in space-y-5 md:space-y-8 mt-[-15vh] md:mt-[-10vh]">
+      {/* ▼▼▼ 修正: mt-[-5vh] を mt-[5vh]（プラスの値）に変更し、スマホ版のみ文字全体をさらに下へ降ろしました ▼▼▼ */}
+      <div className="relative z-10 text-center px-2 md:px-6 animate-fade-in space-y-5 md:space-y-8 mt-[5vh] md:mt-[-10vh]">
         
         {/* タグライン */}
         <div className="inline-block border border-gold-400/50 px-6 py-2 backdrop-blur-sm bg-navy-900/30">
@@ -68,7 +69,7 @@ const Hero = () => {
       </div>
 
       {/* 企業ロゴのエリア */}
-      <div className="absolute bottom-0 md:bottom-24 left-0 w-full md:bg-white py-4 z-20 overflow-hidden">
+      <div className="absolute bottom-0 md:bottom-24 left-0 w-full md:bg-white md:py-4 z-20 overflow-hidden">
         
         {/* PC版のみ表示：横スクロール */}
         <div className="hidden md:flex animate-scroll-logos gap-12 md:gap-20 items-center px-6">
@@ -93,8 +94,7 @@ const Hero = () => {
         </div>
 
         {/* スマホ版のみ表示：静止画像1枚を中央配置 */}
-        {/* ▼▼▼ 修正: px-4 を外し、w-[92%] max-w-[360px] にして上の文字幅と揃えました ▼▼▼ */}
-        <div className="flex md:hidden justify-center items-center w-full py-2">
+        <div className="flex md:hidden justify-center items-center w-full bg-white py-5">
           <img 
             src={logo2} 
             alt="Partner Logos Mobile" 

@@ -1,12 +1,17 @@
 import React from 'react';
 
 const Target = () => {
+  // ▼▼▼ 修正1： border-t border-white/10 を削除し、はみ出し防止の overflow-hidden を追加しました ▼▼▼
   return (
-    <section className="py-32 px-6 relative border-t border-white/10 bg-navy-900/20">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-10 px-6 relative overflow-hidden bg-navy-900/20">
+      
+      {/* ▼▼▼ 修正2：上から下へ広がるうっすらとした白いフィルターを追加 ▼▼▼ */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none -z-10"></div>
+
+      {/* ▼▼▼ 修正3：コンテンツがフィルターの上にしっかり表示されるように relative z-10 を追加 ▼▼▼ */}
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* タイトルエリア */}
-        {/* ▼▼▼ 修正：スマホ版は左揃え(text-left)、PC版は中央揃え(md:text-center) ▼▼▼ */}
         <div className="text-left md:text-center mb-16 animate-fade-in">
           <span className="text-gold-gradient font-sans font-bold tracking-widest text-xs border border-gold-400 px-3 py-1 inline-block mb-4">
             IDEAL CANDIDATE

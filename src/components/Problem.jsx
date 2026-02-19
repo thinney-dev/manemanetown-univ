@@ -1,9 +1,15 @@
 import React from 'react';
 
 const Problem = () => {
+  // ▼▼▼ 修正1： border-t border-white/10 を削除して上の線を消しました ▼▼▼
   return (
-    <section id="problem" className="py-32 px-6 relative border-t border-white/10">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section id="problem" className="py-10 px-6 relative overflow-hidden">
+      
+      {/* ▼▼▼ 修正2：上から下へ広がるうっすらとした白いフィルターを追加 ▼▼▼ */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none -z-10"></div>
+
+      {/* ▼▼▼ 追加：コンテンツがフィルターの上にしっかり表示されるように relative z-10 を追加 ▼▼▼ */}
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
         
         {/* 左側：問いかけ */}
         <div className="space-y-8 animate-fade-in">
@@ -40,8 +46,7 @@ const Problem = () => {
       </div>
 
       {/* 下部のメッセージ */}
-      <div className="text-center mt-24 animate-fade-in delay-200">
-        {/* ▼▼▼ 修正：スマホの文字サイズをtext-baseに調整し、各行に whitespace-nowrap を追加 ▼▼▼ */}
+      <div className="text-center mt-24 animate-fade-in delay-200 relative z-10">
         <p className="text-white font-serif text-base md:text-xl tracking-wider leading-loose">
           <span className="inline-block whitespace-nowrap">このコミュニティは、ただのサークルではない。</span><br />
           <span className="inline-block whitespace-nowrap">
