@@ -26,13 +26,13 @@ const Closing = () => {
               href="#entry" 
               className="bg-gold-400 text-navy-900 font-bold py-4 px-12 rounded hover:bg-white transition duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
             >
-              体験に申し込む
+              コミュニティに参加する
             </a>
             <a 
               href="#entry" 
               className="bg-navy-900/80 border border-white/30 text-white font-bold py-4 px-12 rounded hover:bg-white/10 transition duration-300 backdrop-blur-sm"
             >
-              説明会にエントリー
+              体験に申し込む
             </a>
           </div>
 

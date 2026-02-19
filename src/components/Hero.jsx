@@ -9,7 +9,7 @@ const Hero = () => {
   const logos = [logo1];
 
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] md:h-screen flex flex-col justify-between md:justify-center items-center overflow-hidden">
       
       {/* 無限スクロール用のアニメーション定義 */}
       <style>{`
@@ -23,9 +23,8 @@ const Hero = () => {
         }
       `}</style>
 
-      {/* メインコンテンツ */}
-      {/* ▼▼▼ 修正: mt-[-5vh] を mt-[5vh]（プラスの値）に変更し、スマホ版のみ文字全体をさらに下へ降ろしました ▼▼▼ */}
-      <div className="relative z-10 text-center px-2 md:px-6 animate-fade-in space-y-5 md:space-y-8 mt-[5vh] md:mt-[-10vh]">
+      {/* メインコンテンツ：flex-1 を追加して、ロゴの上の空きスペースの真ん中に配置 */}
+      <div className="relative z-10 text-center px-2 md:px-6 animate-fade-in space-y-5 md:space-y-8 flex-1 flex flex-col justify-center items-center w-full mt-[2vh] md:mt-[-10vh] pb-8 md:pb-0 pt-16 md:pt-0">
         
         {/* タグライン */}
         <div className="inline-block border border-gold-400/50 px-6 py-2 backdrop-blur-sm bg-navy-900/30">
@@ -68,8 +67,8 @@ const Hero = () => {
 
       </div>
 
-      {/* 企業ロゴのエリア */}
-      <div className="absolute bottom-0 md:bottom-24 left-0 w-full md:bg-white md:py-4 z-20 overflow-hidden">
+      {/* 企業ロゴのエリア：スマホでは absolute を外して重なりを防止 */}
+      <div className="w-full md:absolute md:bottom-24 md:left-0 md:bg-white md:py-4 z-20 overflow-hidden mt-auto md:mt-0">
         
         {/* PC版のみ表示：横スクロール */}
         <div className="hidden md:flex animate-scroll-logos gap-12 md:gap-20 items-center px-6">
