@@ -22,13 +22,11 @@ const Organization = () => {
         <div className="flex flex-col gap-20 md:gap-32 items-start">
           
           {/* 上部：団体情報 */}
-          {/* ▼▼▼ 修正: md:max-w-lg を md:max-w-4xl に変更して横幅を広げました ▼▼▼ */}
           <div className="space-y-8 animate-fade-in w-full md:max-w-4xl">
             <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight">
               運営団体について
             </h2>
             
-            {/* ▼▼▼ 修正: スマホは1列、PCは2列(md:grid-cols-2)に変更 ▼▼▼ */}
             <div className="bg-white/5 border border-white/10 p-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               
               {/* 左側：THINNEY株式会社 */}
@@ -38,7 +36,6 @@ const Organization = () => {
               </div>
               
               {/* 右側：A.T. Kearney */}
-              {/* ▼▼▼ 修正: PCの時は上の線(border-t)を消して、左の線(md:border-l)を表示 ▼▼▼ */}
               <div className="pt-6 md:pt-0 border-t md:border-t-0 md:border-l border-white/10 md:pl-8 flex flex-col justify-center">
                 <span className="text-xs text-silver/50 tracking-widest block mb-2">CERTIFIED BY</span>
                 <p className="text-xl text-gold-gradient font-bold font-serif mb-2">
@@ -99,6 +96,7 @@ const Organization = () => {
                       私は母子家庭で育ち、さらには自分自身が詐欺に遭うというどん底の経験をしました。そこから痛感したのは、「お金の知識がないと、自分の人生すら守れない」という残酷な現実でした。この原体験から、私は金融教育事業『まねまねタウン』をスタートさせました。金融商品の販売などは一切行わない、徹底的に「ユーザー目線」を貫くプロダクトです。
                     </p>
                     <p>
+                    <span className="text-white font-bold text-lg mx-1">【お金の教育行を始めた理由】</span><br />
                       背景には、先進国で金融リテラシーが最下位と言われる日本の現状があります。私たちは生きていくために毎日お金を使うにもかかわらず、これまでお金について学ぶ機会が完全に抜け落ちていました。しかし、生きる上で金融知識はもはや必須です。2020年から小中高の学習指導要領で金融教育が必修化された事実が、それを裏付けています。
                     </p>
                     <p>
@@ -113,6 +111,7 @@ const Organization = () => {
                       それは、今の大学生たちの現状です。
                     </p>
                     <p>
+                    <span className="text-white font-bold text-lg mx-1">【このコミュニティを始めた理由】</span><br />
                       皆さんは、金融教育が必修化される前の「旧学習指導要領」の世代です。それに加え、コロナ禍という未曾有の事態によって、対面でのコミュニケーションやプレゼンテーションの機会を理不尽に奪われてきました。<br />
                       人と深く話し、議論する機会が圧倒的に少なかったがゆえに、「本来ならもっと伸ばせるはずの才能」が眠ったままになっている人が大勢いるのです。
                     </p>
@@ -132,16 +131,31 @@ const Organization = () => {
                       「自分らしく生きる人を増やす」という私たちのミッションを、これからの社会を創る大学生の皆さんにも展開したいと本気で考えているからです。
                     </p>
                     
-                    {/* メッセージの核となる部分を少し強調（枠線や色）して見やすくしました */}
-                    <div className="bg-navy-900/50 p-6 border-l-2 border-gold-400/50 rounded-r-lg my-8">
-                      <p className="text-white mb-4 leading-relaxed font-serif">
-                        このミッションに少しでも共感してくれた人。<br />
-                        自分たちにできることから社会貢献をしたい人。<br />
-                        圧倒的に成長して自分のキャリアに活かしたい人。<br />
-                        お金の教養を身につけ、自らの力で生きていくスキルを得たい人。<br />
-                        そして、ここで得たものをいつか日本社会に還元したいという熱い思いを持った人。
-                      </p>
-                      <p className="text-gold-gradient font-bold font-serif">
+                    {/* ▼▼▼ 修正：箇条書き部分を綺麗なリスト形式に変更しました ▼▼▼ */}
+                    <div className="bg-navy-900/50 p-6 md:p-8 border-l-2 border-gold-400/50 rounded-r-lg my-8">
+                      <ul className="text-white mb-6 leading-loose font-serif space-y-4">
+                        <li className="flex items-start">
+                          <span className="mr-2">・</span>
+                          <span>このミッションに少しでも共感してくれた人。</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2">・</span>
+                          <span>自分たちにできることから社会貢献をしたい人。</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2">・</span>
+                          <span>圧倒的に成長して自分のキャリアに活かしたい人。</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2">・</span>
+                          <span>お金の教養を身につけ、自らの力で生きていくスキルを得たい人。</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2">・</span>
+                          <span>そして、ここで得たものをいつか日本社会に還元したいという熱い思いを持った人。</span>
+                        </li>
+                      </ul>
+                      <p className="text-gold-gradient font-bold font-serif text-base md:text-lg">
                         そんなエネルギーを持った皆さんに、ぜひ来てほしいと願っています。
                       </p>
                     </div>
